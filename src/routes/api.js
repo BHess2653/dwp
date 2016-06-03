@@ -87,18 +87,16 @@ module.exports = function (express) {
   });
 
   router.get('/users/:id', function(req, res){
-    res.json({ users:
-      [{
+    res.json({
         "id": "A02",
         "username": "The Flash",
         "firstname": "Barry",
         "lastname": "Allen"
-      }]
     });
   });
 
   router.get('/apps/:id', function(req, res){
-    res.json({ apps:[{
+    res.json({
   "id": "B02",
   "title": "The Fastest Puzzle App",
   "description": "Fastest puzzle app out there",
@@ -113,7 +111,6 @@ module.exports = function (express) {
     "id": "A02",
     "name": "The Flash"
   }
-}]
     });
   });
 

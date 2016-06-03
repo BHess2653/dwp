@@ -13,16 +13,17 @@ nodemon src/server.js
 
 ```
 
-##routes
+##route
 - /api/
 
 ```
-{ nav: [{
-          "users": "http://localhost:3000/api/users",
-          "apps": "http://localhost:3000/api/apps",
-          "single user": "http://localhost:3000/api/users/:id",
-          "single app": "http://localhost:3000/api/apps/:id"
-          }]
-        }
+{ nav:
+  [{
+    "users": "http://localhost:3000/api/users",
+    "apps": "http://localhost:3000/api/apps",
+    "single user": "http://localhost:3000/api/users/:id",
+    "single app": "http://localhost:3000/api/apps/:id"
+  }]
+}
 
 ```
