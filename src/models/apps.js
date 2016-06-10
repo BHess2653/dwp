@@ -1,13 +1,18 @@
 const db = require('./db');
+const util = require('../../lib/util');
 
+// Create App
 exports.create = (payload, err, success) => {
   db.app.create(payload).then(success).catch(err);
+  util.debug('Models app is being created', payload);
 };
 
+// Find All Apps
 exports.findAll = (err, success) => {
   db.app.findAll().then(success).catch(err);
 };
 
+// Find One App
 exports.find = (payload, err, success) => {
   db.app.find({
     where: {
@@ -19,8 +24,10 @@ exports.find = (payload, err, success) => {
       nested: true,
     }],
   }).then(success).catch(err);
+  util.debug('Models app is being searched', payload);
 };
 
+// Update App
 exports.update = (payload, err, success) => {
   db.app.find({
     where: {
@@ -29,13 +36,15 @@ exports.update = (payload, err, success) => {
   }).then((existingData) => {
     existingData.updateAttributes(payload).then(success).catch(err);
   }).catch(err);
+  util.debug('Models app is being updated', payload);
 };
 
-
+// Delete App
 exports.destroy = (payload, err, success) => {
   db.app.destroy({
     where: {
       id: payload.id,
     },
   }).then(success).catch(err);
+  util.debug('Models app is being deleted', payload);
 };

@@ -13,7 +13,7 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
   logging: false,
 });
 
-
+// Users
 const user = sequelize.define('users', {
   username: {
     type: Sequelize.STRING,
@@ -26,6 +26,7 @@ const user = sequelize.define('users', {
   },
 });
 
+// Apps
 const app = sequelize.define('apps', {
   title: {
     type: Sequelize.STRING,
@@ -44,8 +45,8 @@ const app = sequelize.define('apps', {
   },
 });
 
-app.hasMany(user, {
-  foreignKey: 'appID',
+user.hasMany(app, {
+  foreignKey: 'userID',
 });
 
 sequelize.sync();
