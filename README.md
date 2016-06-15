@@ -1,134 +1,194 @@
 # Appstore
-This is a Static API demonstration, using fake data.
 
-##Run App
+##Server
+How to start and stop your MySQL Server in command line.
+```
+mysql.server start
+
+mysql.server stop
+```
+How to run the sever in command line run.
 ```
 nodemon src/server.js
 
 ```
 
-##route
-- /api/
+##Usage
+Start without DEBUG.
+```
+nodemon src/server.js
+
+node src/server.js
+
+[nodemon] 1.9.2
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching: *.*
+[nodemon] starting `node src/server.js`
 
 ```
-{ nav:
-  [{
-    "users": "http://localhost:3000/api/users",
-    "apps": "http://localhost:3000/api/apps",
-    "single user": "http://localhost:3000/api/users/:id",
-    "single app": "http://localhost:3000/api/apps/:id"
-  }]
-}
+Start with DEBUG.
+```
+DEBUG=true nodemon src/server.js
 
-```
-###Endpoints
-- /api/apps - Display All Apps Info
-```
-{ apps:
-  [{
-      "id": "B00",
-      "title": "T.A.R.D.I.S. App",
-      "description": "Timey Wimey Wibbly Wobbly",
-      "artAssets": [
-        { "title": "Splash Screen", "srcLink": "http://i.imgur.com/5e5Ihb6.jpg" },
-        { "title": "Cut Scene", "srcLink": "http://i.imgur.com/QQ3O6PO.jpg" }
-        ],
-      "releaseDate": "2016-06-15T22:29:20.000Z",
-      "createdAt": "2016-05-15T22:29:20.000Z",
-      "updatedAt": "2016-05-15T22:29:20.000Z",
-      "user": {
-        "id": "A00",
-        "name": "The Doctor"
-        }
-    },
-   {
-      "id": "B01",
-      "title": "Best Archer Shooter",
-      "description": "A fast paced side scrolling archery shooter",
-      "artAssets": [
-        { "title": "Splash Screen", "srcLink": "http://i.imgur.com/5e5Ihb6.jpg" },
-        { "title": "Cut Scene", "srcLink": "http://i.imgur.com/QQ3O6PO.jpg" }
-        ],
-      "releaseDate": "2016-06-15T22:29:20.000Z",
-      "createdAt": "2016-05-15T22:29:20.000Z",
-      "updatedAt": "2016-05-15T22:29:20.000Z",
-      "user": {
-        "id": "A01",
-        "name": "Green Arrow"
-        }
-    },
-    {
-      "id": "B02",
-      "title": "The Fastest Puzzle App",
-      "description": "Fastest puzzle app out there",
-      "artAssets": [
-        { "title": "Splash Screen", "srcLink": "https://gifsound.com/?gif=i.imgur.com/cQDLUM5.gif&v=Q-vU152-XAE&s=23" },
-        { "title": "Cut Scene", "srcLink": "http://i.imgur.com/QQ3O6PO.jpg" }
-        ],
-      "releaseDate": "2016-06-15T22:29:20.000Z",
-      "createdAt": "2016-05-15T22:29:20.000Z",
-      "updatedAt": "2016-05-15T22:29:20.000Z",
-      "user": {
-        "id": "A02",
-        "name": "The Flash"
-        }
-  }]
-}
+DEBUG=true node src/server.js
+
+[nodemon] 1.9.2
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching: *.*
+[nodemon] starting `node src/server.js`
+
+=================================================
+Server Active On Port
+=================================================
+ 3000
 
 ```
 
-- /api/users - Display All Users Info
+##Endpoints
+- /api/apps - Read All Apps Info
 ```
-{ users:
-  [{
-    "id": "A00",
+[
+  {
+    "id": 1,
+    "title": "T.A.R.D.I.S. App",
+    "description": "Timey Wimey Wibbly Wobbly",
+    "releaseDate": "Nov 12, 2016",
+    "srcTitle": "Splash Screen",
+    "srcLink": "http://i.imgur.com/QQ3O6PO.jpg",
+    "createdAt": "2016-06-10T04:05:43.000Z",
+    "updatedAt": "2016-06-10T04:05:43.000Z",
+    "userID": 1
+  },
+  {
+    "id": 2,
+    "title": "Emerald Archer of Star City",
+    "description": "A fast paced archery hero game",
+    "releaseDate": "Nov 16, 2016",
+    "srcTitle": "Splash Screen",
+    "srcLink": "http://i.imgur.com/QQ3O6PO.jpg",
+    "createdAt": "2016-06-10T04:06:28.000Z",
+    "updatedAt": "2016-06-10T04:06:28.000Z",
+    "userID": 2
+  },
+  {
+    "id": 3,
+    "title": "Puzzle Runner",
+    "description": "Run through crazy puzzles",
+    "releaseDate": "Nov 16, 2016",
+    "srcTitle": "Splash Screen",
+    "srcLink": "https://gifsound.com/?gif=i.imgur.com/cQDLUM5.gif&v=Q-vU152-XAE&s=23",
+    "createdAt": "2016-06-10T04:06:32.000Z",
+    "updatedAt": "2016-06-10T04:06:32.000Z",
+    "userID": 3
+  },
+  {
+    "id": 4,
+    "title": "Dark Knight",
+    "description": "Defend the city at night",
+    "releaseDate": "Nov 16, 2016",
+    "srcTitle": "Splash Screen",
+    "srcLink": "http://i.imgur.com/QQ3O6PO.jpg",
+    "createdAt": "2016-06-10T04:06:35.000Z",
+    "updatedAt": "2016-06-10T04:06:35.000Z",
+    "userID": 4
+  }
+]
+
+```
+
+- /api/users - Read All Users Info
+```
+[
+  {
+    "id": 1,
     "username": "The Doctor",
-    "firstname": "John",
-    "lastname": "Smith"
+    "firstName": "John",
+    "lastName": "Smith",
+    "createdAt": "2016-06-10T04:08:11.000Z",
+    "updatedAt": "2016-06-10T04:08:11.000Z"
   },
   {
-    "id": "A01",
+    "id": 2,
     "username": "Green Arrow",
-    "firstname": "Oliver",
-    "lastname": "Queen"
+    "firstName": "Oliver",
+    "lastName": "Queen",
+    "createdAt": "2016-06-10T04:08:29.000Z",
+    "updatedAt": "2016-06-10T04:08:29.000Z"
   },
   {
-    "id": "A02",
+    "id": 3,
     "username": "The Flash",
-    "firstname": "Barry",
-    "lastname": "Allen"
-  }]
+    "firstName": "Barry",
+    "lastName": "Allen",
+    "createdAt": "2016-06-10T04:08:44.000Z",
+    "updatedAt": "2016-06-10T04:08:44.000Z"
+  },
+  {
+    "id": 4,
+    "username": "Batman",
+    "firstName": "Bruce",
+    "lastName": "Wayne",
+    "createdAt": "2016-06-10T04:08:58.000Z",
+    "updatedAt": "2016-06-10T04:08:58.000Z"
+  }
+]
+
+```
+
+- /api/apps/:id - Read Single App Info
+```
+{
+  "id": 3,
+  "title": "Puzzle Runner",
+  "description": "Run through crazy puzzles",
+  "releaseDate": "Nov 16, 2016",
+  "srcTitle": "Splash Screen",
+  "srcLink": "https://gifsound.com/?gif=i.imgur.com/cQDLUM5.gif&v=Q-vU152-XAE&s=23",
+  "createdAt": "2016-06-10T04:06:32.000Z",
+  "updatedAt": "2016-06-10T04:06:32.000Z",
+  "userID": 3
 }
 
 ```
 
-- /api/apps/:id - Display Single App Info
+- /api/users/:id - Read Single User Info
 ```
 {
-  "id": "B02",
-  "title": "The Fastest Puzzle App",
-  "description": "Fastest puzzle app out there",
-  "artAssets": [
-    { "title": "Splash Screen", "srcLink": "https://gifsound.com/?gif=i.imgur.com/cQDLUM5.gif&v=Q-vU152-XAE&s=23" },
-    { "title": "Cut Scene", "srcLink": "http://i.imgur.com/QQ3O6PO.jpg" }
-    ],
-  "releaseDate": "2016-06-15T22:29:20.000Z",
-  "createdAt": "2016-05-15T22:29:20.000Z",
-  "updatedAt": "2016-05-15T22:29:20.000Z",
-  "user": {
-    "id": "A02",
-    "name": "The Flash"
-    }
-}
-
-```
-
-- /api/users/:id - Display Single User Info
-```
-{
-  "id": "A02",
+  "id": 3,
   "username": "The Flash",
-  "firstname": "Barry",
-  "lastname": "Allen"
+  "firstName": "Barry",
+  "lastName": "Allen",
+  "createdAt": "2016-06-10T04:08:44.000Z",
+  "updatedAt": "2016-06-10T04:08:44.000Z",
+  "apps": [
+    {
+      "id": 3,
+      "title": "Puzzle Runner",
+      "description": "Run through crazy puzzles",
+      "releaseDate": "Nov 16, 2016",
+      "srcTitle": "Splash Screen",
+      "srcLink": "https://gifsound.com/?gif=i.imgur.com/cQDLUM5.gif&v=Q-vU152-XAE&s=23",
+      "createdAt": "2016-06-10T04:06:32.000Z",
+      "updatedAt": "2016-06-10T04:06:32.000Z",
+      "userID": 3
+    }
+  ]
 }
+```
+
+- /api/users/:id/apps - Read Single User Apps Info
+```
+[
+  {
+    "id": 3,
+    "title": "Puzzle Runner",
+    "description": "Run through crazy puzzles",
+    "releaseDate": "Nov 16, 2016",
+    "srcTitle": "Splash Screen",
+    "srcLink": "https://gifsound.com/?gif=i.imgur.com/cQDLUM5.gif&v=Q-vU152-XAE&s=23",
+    "createdAt": "2016-06-10T04:06:32.000Z",
+    "updatedAt": "2016-06-10T04:06:32.000Z",
+    "userID": 3
+  }
+]
 ```
