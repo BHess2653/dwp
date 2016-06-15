@@ -14,7 +14,7 @@ module.exports = (express) => {
 
   // Read One App
   router.get('/apps/:id', (req, res) => {
-    req.body.id = req.params.id
+    req.body.id = req.params.id;
     user.find(req.body, (err) => {
       res.status(500).json(err);
     }, (data) => {
@@ -24,7 +24,7 @@ module.exports = (express) => {
 
   // Delete App
   router.delete('/apps/:id', (req, res) => {
-    req.body.id = req.params.id
+    req.body.id = req.params.id;
     user.destroy(req.body, (err) => {
       res.status(500).json(err);
     }, (data) => {
@@ -34,7 +34,7 @@ module.exports = (express) => {
 
   // Update App
   router.post('/apps/:id', (req, res) => {
-    req.body.id = req.params.id
+    req.body.id = req.params.id;
     user.update(req.body, (err) => {
       res.status(500).json(err);
     }, (data) => {
