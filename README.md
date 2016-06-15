@@ -1,5 +1,20 @@
 # Appstore
 
+##Installing Dependencies
+```
+npm i or npm install
+```
+##.env File
+add a .env file.(sample data)
+```
+DB_NAME=databaseName
+DB_USER=
+DB_PASS=
+DB_HOST=localhost
+DB_SCHEMA=mysql
+DB_PORT=3306
+```
+
 ##Server
 How to start and stop your MySQL Server in command line.
 ```
@@ -7,9 +22,9 @@ mysql.server start
 
 mysql.server stop
 ```
-How to run the sever in command line run.
+How to run the sever in command line.
 ```
-nodemon src/server.js
+nodemon src/server.js or npm start
 
 ```
 
@@ -42,6 +57,11 @@ Server Active On Port
 =================================================
  3000
 
+```
+###Unit Testing
+How to start unit testing in command line.
+```
+mocha
 ```
 
 ##Endpoints
