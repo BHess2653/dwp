@@ -64,6 +64,14 @@ How to start unit testing in command line.
 mocha
 ```
 
+##Deployment
+
+Heroku looks at the npm start script to kick things off.
+
+Git commit and push to Github
+
+Manually Deploy to Heroku
+
 ##Endpoints
 - /api/apps - Read All Apps Info
 ```
