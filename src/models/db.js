@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 
+// NODE_ENV === 'produtions'
 if (!process.env.DB_HOST) require('dotenv').config();
 
 require('dotenv').config();
