@@ -8,8 +8,8 @@ npm i or npm install
 add a .env file.(sample data)
 ```
 DB_NAME=databaseName
-DB_USER=
-DB_PASS=
+DB_USER=databaseUsername
+DB_PASS=databasePassword
 DB_HOST=localhost
 DB_SCHEMA=mysql
 DB_PORT=3306
