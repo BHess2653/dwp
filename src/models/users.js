@@ -1,5 +1,4 @@
 const db = require('./db');
-// const utool = require('../../lib/utool');
 const utool = require('uTool');
 
 // Create User

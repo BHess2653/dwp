@@ -1,6 +1,5 @@
 const expect = require('chai').expect;
 const app = require('../src/models/apps');
-// const utool = require('../lib/utool');
 const utool = require('uTool');
 
 let testApp = {};

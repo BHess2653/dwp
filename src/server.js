@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-// const utool = require('../lib/utool');
 const utool = require('uTool');
 const app = express();
 
