@@ -1,4 +1,5 @@
 # Appstore
+[ ![Codeship Status for BHess2653/dwp](https://codeship.com/projects/961b7050-17ca-0134-3b27-2a776fb5d411/status?branch=master)](https://codeship.com/projects/158598)
 
 ##Installing Dependencies
 ```
