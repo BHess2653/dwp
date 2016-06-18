@@ -1,6 +1,7 @@
 const expect = require('chai').expect;
 const user = require('../src/models/users');
-const util = require('../lib/util');
+// const utool = require('../lib/utool');
+const utool = require('uTool');
 
 let testUser = {};
 
@@ -16,7 +17,7 @@ describe('Users', () => {
     };
 
     user.create(mockUser, (error) => {
-      util.debug('Error creating mock user.', error);
+      utool.debug('Error creating mock user.', error);
     }, (newDbUser) => {
       testUser = newDbUser;
     });
@@ -29,7 +30,7 @@ describe('Users', () => {
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   it('Should be able to Read All Users', (done) => {
     user.findAll((error) => {
-      util.debug('Error reading all Users', error);
+      utool.debug('Error reading all Users', error);
     }, (allUsers) => {
       expect(allUsers.length).to.be.above(1);
       done();
@@ -40,7 +41,7 @@ describe('Users', () => {
 // ======================= Read One User =====================================
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   it('Should be able to Read One User', (done) => {
-    user.find(testUser, (error) => util.debug('Error reading One User', error),
+    user.find(testUser, (error) => utool.debug('Error reading One User', error),
     (oneUser) => {
       expect(oneUser.id).to.be.equal(testUser.id);
       done();
@@ -64,7 +65,7 @@ describe('Users', () => {
       firstName: 'Billy',
       lastName: 'Walks',
     };
-    user.update(updateInfo, (err) => util.debug('User failed to update', err),
+    user.update(updateInfo, (err) => utool.debug('User failed to update', err),
     (updatedDbUser) => {
       expect(updatedDbUser.name).to.be.equal(updateInfo.name);
       testUser = updatedDbUser;
@@ -76,7 +77,7 @@ describe('Users', () => {
 // ======================= Delete User =======================================
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   it('Should be able to Delete', (done) => {
-    user.destroy(testUser, (err) => util.debug('User Errored while Destorying', err),
+    user.destroy(testUser, (err) => utool.debug('User Errored while Destorying', err),
     (responseFromDestroy) => {
       expect(responseFromDestroy).to.be.equal(1);
       done();

@@ -1,10 +1,11 @@
 const db = require('./db');
-const util = require('../../lib/util');
+// const utool = require('../../lib/utool');
+const utool = require('uTool');
 
 // Create App
 exports.create = (payload, err, success) => {
   db.app.create(payload).then(success).catch(err);
-  util.debug('Models app is being created', payload);
+  utool.debug('Models app is being created', payload);
 };
 
 // Find All Apps
@@ -24,7 +25,7 @@ exports.find = (payload, err, success) => {
       nested: true,
     }],
   }).then(success).catch(err);
-  util.debug('Models app is being searched', payload);
+  utool.debug('Models app is being searched', payload);
 };
 
 // Update App
@@ -36,7 +37,7 @@ exports.update = (payload, err, success) => {
   }).then((existingData) => {
     existingData.updateAttributes(payload).then(success).catch(err);
   }).catch(err);
-  util.debug('Models app is being updated', payload);
+  utool.debug('Models app is being updated', payload);
 };
 
 // Delete App
@@ -46,5 +47,5 @@ exports.destroy = (payload, err, success) => {
       id: payload.id,
     },
   }).then(success).catch(err);
-  util.debug('Models app is being deleted', payload);
+  utool.debug('Models app is being deleted', payload);
 };

@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const util = require('../lib/util');
+// const utool = require('../lib/utool');
+const utool = require('uTool');
 const app = express();
 
 const port = process.env.PORT || 3000;
@@ -13,5 +14,5 @@ app.use(bodyParser.urlencoded({
 app.use('/', require('./routes')(express));
 
 exports.server = app.listen(port, () => {
-  util.debug('Server Active On Port', port);
+  utool.debug('Server Active On Port', port);
 });
