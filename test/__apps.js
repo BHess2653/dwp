@@ -1,6 +1,7 @@
 const expect = require('chai').expect;
 const app = require('../src/models/apps');
 const utool = require('uTool');
+var colors = require('colors');
 
 let testApp = {};
 

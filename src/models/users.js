@@ -1,5 +1,6 @@
 const db = require('./db');
 const utool = require('uTool');
+var colors = require('colors');
 
 // Create User
 exports.create = (payload, err, success) => {

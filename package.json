@@ -11,16 +11,17 @@
     "start": "node src/server.js",
     "test": "mocha"
   },
-  "author": "Brandon Hess",
+  "author": "BHess2653",
   "license": "ISC",
   "dependencies": {
     "body": "5.1.0",
     "body-parser": "1.15.1",
+    "colors": "1.1.2",
     "express": "4.13.4",
     "mysql": "2.11.0",
+    "nodemon": "1.9.2",
     "parser": "0.1.4",
     "sequelize": "3.23.3",
-    "nodemon": "1.9.2",
     "uTool": "v1.0.0"
   },
   "devDependencies": {
