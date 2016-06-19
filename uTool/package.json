@@ -1,0 +1,12 @@
+{
+  "name": "uTool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/utool.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "BHess2653",
+  "license": "ISC"
+}
