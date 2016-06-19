@@ -22,7 +22,7 @@
     "nodemon": "1.9.2",
     "parser": "0.1.4",
     "sequelize": "3.23.3",
-    "uTool": "v1.0.0"
+    "uTool": "^v1.0.0"
   },
   "devDependencies": {
     "chai": "3.5.0",
