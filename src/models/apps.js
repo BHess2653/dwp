@@ -5,7 +5,7 @@ const colors = require('colors');
 // Create App
 exports.create = (payload, err, success) => {
   db.app.create(payload).then(success).catch(err);
-  utool.debug(colors.green('Models app is being created', payload));
+  utool.debug('Models app is being ' + colors.green('created'), payload);
 };
 
 // Find All Apps
@@ -25,7 +25,7 @@ exports.find = (payload, err, success) => {
       nested: true,
     }],
   }).then(success).catch(err);
-  utool.debug(colors.green('Models app is being searched', payload));
+  utool.debug('Models app is being searched'.yellow, payload);
 };
 
 // Update App
@@ -37,7 +37,7 @@ exports.update = (payload, err, success) => {
   }).then((existingData) => {
     existingData.updateAttributes(payload).then(success).catch(err);
   }).catch(err);
-  utool.debug(colors.green('Models app is being updated', payload));
+  utool.debug('Models app is being ' + 'updated'.magenta, payload);
 };
 
 // Delete App
@@ -47,5 +47,5 @@ exports.destroy = (payload, err, success) => {
       id: payload.id,
     },
   }).then(success).catch(err);
-  utool.debug(colors.green('Models app is being deleted', payload));
+  utool.debug('Models app is being deleted'.red, payload);
 };

@@ -1,11 +1,11 @@
 const db = require('./db');
 const utool = require('uTool');
-var colors = require('colors');
+const colors = require('colors');
 
 // Create User
 exports.create = (payload, err, success) => {
   db.user.create(payload).then(success).catch(err);
-  utool.debug('Models user is being created', payload);
+  utool.debug('Models user is being' + ' created'.green, payload);
 };
 
 // Find All Users
@@ -25,7 +25,7 @@ exports.find = (payload, err, success) => {
       nested: true,
     }],
   }).then(success).catch(err);
-  utool.debug('Models user is being searched', payload);
+  utool.debug('Models user is being ' + 'searched'.yellow, payload);
 };
 
 // Update User
@@ -37,7 +37,7 @@ exports.update = (payload, err, success) => {
   }).then((existingData) => {
     existingData.updateAttributes(payload).then(success).catch(err);
   }).catch(err);
-  utool.debug('Models user is being updated', payload);
+  utool.debug('Models user is being' + ' updated'.magenta, payload);
 };
 
 // Delete User
@@ -47,5 +47,5 @@ exports.destroy = (payload, err, success) => {
       id: payload.id,
     },
   }).then(success).catch(err);
-  utool.debug('Models user is being deleted', payload);
+  utool.debug('Models user is being' + ' deleted'.red, payload);
 };
