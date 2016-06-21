@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const utool = require('uTool');
-var colors = require('colors');
+const colors = require('colors');
 const app = express();
 
 const port = process.env.PORT || 3000;
@@ -14,5 +14,5 @@ app.use(bodyParser.urlencoded({
 app.use('/', require('./routes')(express));
 
 exports.server = app.listen(port, () => {
-  utool.debug('Server Active On Port', port);
+  utool.debug(colors.green('Server Active On Port'), port);
 });

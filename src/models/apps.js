@@ -25,7 +25,7 @@ exports.find = (payload, err, success) => {
       nested: true,
     }],
   }).then(success).catch(err);
-  utool.debug('Models app is being searched'.yellow, payload);
+  utool.debug('Models app is being ' + colors.yellow('searched'), payload);
 };
 
 // Update App
@@ -37,7 +37,7 @@ exports.update = (payload, err, success) => {
   }).then((existingData) => {
     existingData.updateAttributes(payload).then(success).catch(err);
   }).catch(err);
-  utool.debug('Models app is being ' + 'updated'.magenta, payload);
+  utool.debug('Models app is being ' + colors.magenta('updated'), payload);
 };
 
 // Delete App
@@ -47,5 +47,5 @@ exports.destroy = (payload, err, success) => {
       id: payload.id,
     },
   }).then(success).catch(err);
-  utool.debug('Models app is being deleted'.red, payload);
+  utool.debug('Models app is being ' + colors.red('deleted'), payload);
 };
