@@ -31,7 +31,7 @@ describe('Users', () => {
     user.findAll((error) => {
       utool.debug('Error reading all Users'.error, error);
     }, (allUsers) => {
-      expect(allUsers.length).to.be.above(1);
+      expect(allUsers.length).to.be.above(0);
       done();
     });
   });

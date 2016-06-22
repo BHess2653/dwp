@@ -34,7 +34,7 @@ describe('Apps', () => {
     app.findAll((error) => {
       utool.debug('Error reading all Apps'.error, error);
     }, (allApps) => {
-      expect(allApps.length).to.be.above(1);
+      expect(allApps.length).to.be.above(0);
       done();
     });
   });
