@@ -1,7 +1,6 @@
 const expect = require('chai').expect;
 const app = require('../src/models/apps');
 const utool = require('uTool');
-const colors = require('colors');
 
 let testApp = {};
 
@@ -20,7 +19,7 @@ describe('Apps', () => {
     };
 
     app.create(mockApp, (error) => {
-      utool.debug(colors.red('Error creating mock app.'), error);
+      utool.debug('Error creating mock app'.error, error);
     }, (newDbApp) => {
       testApp = newDbApp;
     });
@@ -33,7 +32,7 @@ describe('Apps', () => {
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   it('Should be able to Read All Apps', (done) => {
     app.findAll((error) => {
-      utool.debug(colors.red('Error reading all Apps'), error);
+      utool.debug('Error reading all Apps'.error, error);
     }, (allApps) => {
       expect(allApps.length).to.be.above(1);
       done();
@@ -44,7 +43,7 @@ describe('Apps', () => {
 // ======================= Read One App ======================================
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   it('Should be able to Read One App', (done) => {
-    app.find(testApp, (error) => utool.debug(colors.red('Error reading One App'), error),
+    app.find(testApp, (error) => utool.debug('Error reading One App'.error, error),
     (oneApp) => {
       expect(oneApp.id).to.be.equal(testApp.id);
       done();
@@ -68,7 +67,7 @@ describe('Apps', () => {
       description: 'This game is Crazy Cool',
       releaseDate: 'Dec 25, 2016',
     };
-    app.update(updateInfo, (err) => utool.debug(colors.red('App failed to update'), err),
+    app.update(updateInfo, (err) => utool.debug('App failed to update'.error, err),
     (updatedDbApp) => {
       expect(updatedDbApp.name).to.be.equal(updateInfo.name);
       testApp = updatedDbApp;
@@ -80,7 +79,7 @@ describe('Apps', () => {
 // ======================= Delete App ========================================
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
   it('Should be able to Delete', (done) => {
-    app.destroy(testApp, (err) => utool.debug(colors.red('App Errored while Destorying'), err),
+    app.destroy(testApp, (err) => utool.debug('App Errored while Destorying'.error, err),
     (responseFromDestroy) => {
       expect(responseFromDestroy).to.be.equal(1);
       done();

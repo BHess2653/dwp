@@ -1,5 +1,4 @@
 # Appstore
-[ ![Codeship Status for BHess2653/dwp](https://codeship.com/projects/961b7050-17ca-0134-3b27-2a776fb5d411/status?branch=master)](https://codeship.com/projects/158598)
 
 ##Installing Dependencies
 ```
@@ -30,34 +29,9 @@ nodemon src/server.js or npm start
 ```
 
 ##Usage
-Start without DEBUG.
+Start Development Server.
 ```
-nodemon src/server.js
-
 node src/server.js
-
-[nodemon] 1.9.2
-[nodemon] to restart at any time, enter `rs`
-[nodemon] watching: *.*
-[nodemon] starting `node src/server.js`
-
-```
-Start with DEBUG.
-```
-DEBUG=true nodemon src/server.js
-
-DEBUG=true node src/server.js
-
-[nodemon] 1.9.2
-[nodemon] to restart at any time, enter `rs`
-[nodemon] watching: *.*
-[nodemon] starting `node src/server.js`
-
-=================================================
-Server Active On Port
-=================================================
- 3000
-
 ```
 ###Unit Testing
 How to start unit testing in command line.
