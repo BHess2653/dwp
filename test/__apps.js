@@ -15,7 +15,6 @@ describe('Apps', () => {
       releaseDate: 'Nov 10, 2016',
       srcTitle: 'Screen Splash',
       srcLink: 'http://i.imgur.com/QQ3O6PO.jpg',
-      userID: 1,
     };
 
     app.create(mockApp, (error) => {
