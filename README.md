@@ -1,4 +1,5 @@
 # Appstore
+[ ![Codeship Status for BHess2653/dwp](https://codeship.com/projects/961b7050-17ca-0134-3b27-2a776fb5d411/status?branch=master)](https://codeship.com/projects/158598)
 
 ##Installing Dependencies
 ```
@@ -38,6 +39,21 @@ How to start unit testing in command line.
 ```
 mocha
 ```
+
+##Workflow
+get status
+
+get add all files
+
+get commit to staging
+
+switch to feature branch
+
+merge to master
+
+tag your release
+
+push your release
 
 ##Deployment
 
