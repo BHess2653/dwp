@@ -23,16 +23,6 @@ describe('Users', () => {
     });
   });
 
-  // afterEach
-  // afterEach((done) => {
-  //   user.destroy(testUser, (error) => {
-  //     utool.debug('Error unable to delete user'.error, error);
-  //   }, (deletedResponse) => {
-  //     expect(deletedResponse).to.be.equal(0);
-  //     done();
-  //   });
-  // });
-
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 // ======================= Read All Users ====================================
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
