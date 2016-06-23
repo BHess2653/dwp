@@ -26,14 +26,14 @@ describe('Apps', () => {
   });
 
   // afterEach
-  afterEach((done) => {
-    app.destroy(testApp, (error) => {
-      utool.debug('Error unable to delete app'.error, error);
-    }, (deletedResponse) => {
-      expect(deletedResponse).to.be.equal(0);
-      done();
-    });
-  });
+  // afterEach((done) => {
+  //   app.destroy(testApp, (error) => {
+  //     utool.debug('Error unable to delete app'.error, error);
+  //   }, (deletedResponse) => {
+  //     expect(deletedResponse).to.be.equal(0);
+  //     done();
+  //   });
+  // });
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 // ======================= Read All Apps =====================================
