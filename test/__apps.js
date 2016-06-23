@@ -30,7 +30,7 @@ describe('Apps', () => {
     app.destroy(testApp, (error) => {
       utool.debug('Error unable to delete app'.error, error);
     }, (deletedResponse) => {
-      expect(deletedResponse).to.be.equal(1);
+      expect(deletedResponse).to.be.equal(0);
       done();
     });
   });

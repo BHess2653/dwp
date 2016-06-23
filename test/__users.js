@@ -28,7 +28,7 @@ describe('Users', () => {
     user.destroy(testUser, (error) => {
       utool.debug('Error unable to delete user'.error, error);
     }, (deletedResponse) => {
-      expect(deletedResponse).to.be.equal(1);
+      expect(deletedResponse).to.be.equal(0);
       done();
     });
   });
