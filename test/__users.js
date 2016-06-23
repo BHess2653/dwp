@@ -8,7 +8,7 @@ let testUser = {};
 // ======================= Mock User =========================================
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 describe('Users', () => {
-  beforeEach(() => {
+  beforeEach((done) => {
     const mockUser = {
       username: 'Cpt. Hydra',
       firstName: 'John',
@@ -19,10 +19,19 @@ describe('Users', () => {
       utool.debug('Error creating mock user'.error, error);
     }, (newDbUser) => {
       testUser = newDbUser;
+      done();
     });
   });
 
   // afterEach
+  afterEach((done) => {
+    user.destroy(testUser, (error) => {
+      utool.debug('Error unable to delete user'.error, error);
+    }, (deletedResponse) => {
+      expect(deletedResponse).to.be.equal(1);
+      done();
+    });
+  });
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 // ======================= Read All Users ====================================

@@ -8,7 +8,7 @@ let testApp = {};
 // ======================= Mock App ==========================================
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 describe('Apps', () => {
-  beforeEach(() => {
+  beforeEach((done) => {
     const mockApp = {
       title: 'Cool New App',
       description: 'This App is Amazing',
@@ -21,10 +21,19 @@ describe('Apps', () => {
       utool.debug('Error creating mock app'.error, error);
     }, (newDbApp) => {
       testApp = newDbApp;
+      done();
     });
   });
 
   // afterEach
+  afterEach((done) => {
+    app.destroy(testApp, (error) => {
+      utool.debug('Error unable to delete app'.error, error);
+    }, (deletedResponse) => {
+      expect(deletedResponse).to.be.equal(1);
+      done();
+    });
+  });
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 // ======================= Read All Apps =====================================
